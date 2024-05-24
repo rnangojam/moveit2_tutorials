@@ -87,7 +87,7 @@ def launch_setup(context, *args, **kwargs):
         output="both",
         parameters=[moveit_config.robot_description],
     )
-
+    
     # ros2_control using FakeSystem as hardware
     ros2_controllers_path = os.path.join(
         get_package_share_directory("moveit_resources_panda_moveit_config"),

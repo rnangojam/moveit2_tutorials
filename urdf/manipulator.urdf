@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="manipulator" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link name="dummy">
+  </link>
+  <link name="base_link">
+    <inertial>
+      <origin
+        xyz="-4.43534381974301E-11 6.3874360537372E-06 0.0608318718443315"
+        rpy="0 0 0" />
+      <mass
+        value="0.901754400125391" />
+      <inertia
+        ixx="0.00134333075969583"
+        ixy="-1.03214972671229E-12"
+        ixz="-3.11242845426686E-13"
+        iyy="0.00134165896356921"
+        iyz="1.82804851288322E-07"
+        izz="0.0003957749723169" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://moveit2_tutorials/meshes/base_link.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://moveit2_tutorials/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="dummy_joint" type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="dummy" />
+    <child
+      link="base_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link name="Link1">
+    <inertial>
+      <origin
+        xyz="-4.26778861110654E-18 -3.53868553111064E-17 0.141781470011642"
+        rpy="0 0 0" />
+      <mass
+        value="0.0310734965539791" />
+      <inertia
+        ixx="0.000109331940362837"
+        ixy="-5.27327640502556E-21"
+        ixz="3.32350651602314E-20"
+        iyy="2.44529935466656E-05"
+        iyz="2.08692047610847E-20"
+        izz="0.000100110775350328" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://moveit2_tutorials/meshes/Link1.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://moveit2_tutorials/meshes/Link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="70"
+      velocity="5" />
+  </joint>
+  <link  name="LInk2">
+    <inertial>
+      <origin
+        xyz="0.0122781320399895 -0.000104752369101082 0.0982877273061235"
+        rpy="0 0 0" />
+      <mass
+        value="1.44770933157328" />
+      <inertia
+        ixx="0.00615415183111069"
+        ixy="1.84168916330778E-07"
+        ixz="-0.000370119381286804"
+        iyy="0.00529164961491153"
+        iyz="-8.94161249242903E-09"
+        izz="0.00182634876318241" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://moveit2_tutorials/meshes/LInk2.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://moveit2_tutorials/meshes/LInk2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.182"
+      rpy="0 0 0" />
+    <parent
+      link="Link1" />
+    <child
+      link="LInk2" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="50"
+      velocity="3" />
+  </joint>
+  <link name="LInk3">
+    <inertial>
+      <origin
+        xyz="0.10503 0.043487 0.0028697"
+        rpy="0 0 0" />
+      <mass
+        value="0.37969" />
+      <inertia
+        ixx="0.00010123"
+        ixy="2.0616E-05"
+        ixz="-1.6457E-05"
+        iyy="0.0014812"
+        iyz="4.2674E-10"
+        izz="0.0014587" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://moveit2_tutorials/meshes/LInk3.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://moveit2_tutorials/meshes/LInk3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint3"
+    type="revolute">
+    <origin
+      xyz="0.06 0 0.40557"
+      rpy="0 0 0" />
+    <parent
+      link="LInk2" />
+    <child
+      link="LInk3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="0.78"
+      effort="20"
+      velocity="3" />
+  </joint>
+  <link name="LInk4">
+    <inertial>
+      <origin
+        xyz="-3.06640574598838E-08 0.00881851842233967 -0.0862289142926684"
+        rpy="0 0 0" />
+      <mass
+        value="0.180487502777466" />
+      <inertia
+        ixx="0.000626138656646792"
+        ixy="5.17265236716281E-11"
+        ixz="1.58940551565883E-10"
+        iyy="0.00062784576393968"
+        iyz="9.882599063257E-06"
+        izz="2.65391491399756E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://moveit2_tutorials/meshes/LInk4.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://moveit2_tutorials/meshes/LInk4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint4"
+    type="revolute">
+    <origin
+      xyz="0.21447 0 0.0225"
+      rpy="0 0 0" />
+    <parent
+      link="LInk3" />
+    <child
+      link="LInk4" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.78"
+      upper="1.57"
+      effort="20"
+      velocity="3" />
+  </joint>
+  <link name="LInk5">
+    <inertial>
+      <origin
+        xyz="3.18477047716037E-05 2.64181112248144E-05 -0.0469518441849525"
+        rpy="0 0 0" />
+      <mass
+        value="0.487997839859057" />
+      <inertia
+        ixx="0.000327487524270192"
+        ixy="1.79024496787708E-07"
+        ixz="-5.08896187431773E-08"
+        iyy="0.000208531381299029"
+        iyz="2.38558323347539E-07"
+        izz="0.000303862396052111" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://moveit2_tutorials/meshes/LInk5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://moveit2_tutorials/meshes/LInk5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint5"
+    type="revolute">
+    <origin
+      xyz="0 0.01 -0.24"
+      rpy="0 0 0" />
+    <parent
+      link="LInk4" />
+    <child
+      link="LInk5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="20"
+      velocity="3" />
+  </joint>
+</robot>
